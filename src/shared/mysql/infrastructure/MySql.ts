@@ -16,13 +16,13 @@ export class MySql implements DatabaseInterface{
         this.database = process.env.MYSQL_DATABASE;
     }
 
-    async getConnection(): Promise<any> {
+    async getConnection(): Promise<Connection> {
         return mysql.createConnection({
             host: this.host,
             user: this.user,
             database: this.database,
             password: this.password
-        });
+        })
     }
 
     disconnect(connection: Connection): void {
