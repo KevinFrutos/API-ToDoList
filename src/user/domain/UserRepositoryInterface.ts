@@ -1,4 +1,4 @@
-interface RepositoryInterface {
+export interface UserRepositoryInterface extends RepositoryInterface {
     findById(id: string): any;
     findAll(): any;
     save(entity: any): void;
